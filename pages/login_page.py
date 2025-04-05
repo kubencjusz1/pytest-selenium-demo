@@ -16,6 +16,7 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         #self.get_rid_off_cookies()
+
         driver.get(TestData.ecommerce_playground_url)
 
     def set_email(self, email):
