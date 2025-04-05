@@ -4,6 +4,9 @@ from pages.base_page import BasePage
 
 
 class DragNDropPage(BasePage):
+    """
+  The Purpose Of A DragNDropPage Is To Contain Methods Used In Drag And Drop Tests
+  """
     radio_button_demo_location = (By.XPATH, "//a[contains(text(),'Drag and Drop')]")
     first_draggable_xpath = "//span[contains(text(),'Draggable {number}')]"
     first_dropzone_location = (By.ID, "mydropzone")
