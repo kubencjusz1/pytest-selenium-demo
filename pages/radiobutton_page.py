@@ -3,6 +3,9 @@ from pages.base_page import BasePage
 
 
 class RadiobuttonDemoPage(BasePage):
+    """
+  The Purpose Of A RadiobuttonDemoPage Is To Contain Methods To Test Radio Buttons
+  """
     radio_button_demo_location = (By.XPATH, "//a[contains(text(),'Radio Buttons Demo')]")
     first_radio_button_xpath = "//p[contains(text(),'Click on button to get the selected value.')]" \
                                "/parent::div//input[@value='{gender}']"

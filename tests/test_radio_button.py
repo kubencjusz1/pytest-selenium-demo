@@ -4,6 +4,9 @@ from pages.radiobutton_page import RadiobuttonDemoPage
 
 
 class TestRadioButton(BaseTest):
+    """
+  The Purpose Of A TestRadioButton Is To Contain Methods That Test Radio Button Feature
+  """
     @pytest.mark.skip
     @pytest.mark.parametrize("gender, expected_response",
                              [("Female", "Radio button 'Female' is checked"),

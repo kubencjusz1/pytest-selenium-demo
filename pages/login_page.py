@@ -5,13 +5,18 @@ from utilities.test_data import TestData
 
 
 class LoginPage(BasePage):
+    """
+  The Purpose Of A LoginPage Is To Contain Methods Used In Login Tests
+  """
+
     email_textbox_locator = (By.ID, "input-email")
     password_textbox_locator = (By.ID, "input-password")
     login_button_locator = (By.XPATH, "//input[@value='Login']")
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.get_rid_off_cookies()
+        #self.get_rid_off_cookies()
+
         driver.get(TestData.ecommerce_playground_url)
 
     def set_email(self, email):

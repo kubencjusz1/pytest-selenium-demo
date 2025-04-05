@@ -19,8 +19,8 @@ class BasePage:
         return self.driver.find_elements(*locator)
 
     def click(self, locator):
-        self.find(*locator).click()
-        # self.driver.find_element(*locator).click()
+        #self.find(*locator).click()
+        WebDriverWait(self.driver, timeout=5).until(ec.presence_of_element_located(locator)).click()
 
     def set(self, locator, value):
         self.find(*locator).clear()
@@ -35,11 +35,10 @@ class BasePage:
     def get_rid_off_cookies(self):
         try:
             self.driver.get("https://www.lambdatest.com/selenium-playground/")
-            WebDriverWait(self.driver, 7).until(
-                ec.presence_of_element_located((By.ID, "CybotCookiebotDialogBodyLevelButtonPreferences"))).click()
-            self.driver.find_element(By.ID, "CybotCookiebotDialogBodyLevelButtonStatistics").click()
-            self.driver.find_element(By.ID, "CybotCookiebotDialogBodyLevelButtonMarketing").click()
-            self.driver.find_element(By.ID, "CybotCookiebotDialogBodyButtonDecline").click()
+            self.click((By.ID, "CybotCookiebotDialogBodyLevelButtonPreferences"))
+            self.click((By.ID, "CybotCookiebotDialogBodyLevelButtonStatistics"))
+            self.click((By.ID, "CybotCookiebotDialogBodyLevelButtonMarketing"))
+            self.click((By.ID, "CybotCookiebotDialogBodyButtonDecline"))
         except TimeoutError:
             pass
 

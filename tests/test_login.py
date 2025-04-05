@@ -4,6 +4,9 @@ from utilities.test_data import TestData
 
 
 class TestLogin(BaseTest):
+    """
+  The Purpose Of A TestLogin Is To Contain Methods That Test Login Feature
+  """
     def test_successful_login(self):
         login_page = LoginPage(self.driver)
         login_page.set_email(TestData.email)

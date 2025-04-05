@@ -13,6 +13,9 @@ options.add_argument("--disable-search-engine-choice-screen")
 # @pytest.fixture(params=["chrome", "firefox", "edge"])
 @pytest.fixture(params=["chrome"])
 def initialize_driver(request):
+    """
+  The Purpose Of A initialize_driver Is To Contain Options And Fixtures Of Tests
+  """
     if request.param == "chrome":
         driver = webdriver.Chrome(options=options)
     elif request.param == "firefox":
@@ -21,7 +24,6 @@ def initialize_driver(request):
         driver = webdriver.Edge(options=options)
     request.cls.driver = driver
     print("Browser: ", request.param)
-    driver.get(TestData.playground_url)
     yield
     print("Close Driver")
     driver.close()
